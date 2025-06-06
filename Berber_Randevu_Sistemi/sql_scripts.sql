@@ -8,7 +8,7 @@ CREATE TABLE kullanicilar (
     email VARCHAR(100) UNIQUE NOT NULL CHECK (email LIKE '%@%.%'),
     sifre VARCHAR(255) NOT NULL,
     telefon VARCHAR(15),
-    rol VARCHAR(50) NOT NULL,
+    rol VARCHAR(50) NOT NULL CHECK(rol IN ('musteri','personel','admin')),
     kayit_tarihi DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
